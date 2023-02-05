@@ -30,7 +30,8 @@
     "test:prod:watch": "MODE=prod wtr --watch",
     "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=2c1e9305f1ba"
   },
   "keywords": [
     "web-components",
@@ -38,7 +39,9 @@
     "javascript",
     "lit"
   ],
-  "author": "Google LLC",
+  "author": {
+    "name": "Google LLC"
+  },
   "license": "BSD-3-Clause",
   "dependencies": {
     "lit": "^2.2.4"
@@ -64,6 +67,7 @@
     "@web/test-runner-playwright": "^0.8.8",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.15.0",
     "eslint": "^8.15.0",
     "eslint-plugin-storybook": "^0.6.10",
     "lit-analyzer": "^1.2.1",
@@ -74,5 +78,7 @@
     "rollup-plugin-summary": "^1.4.3",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json",
+  "readme": "ERROR: No README data found!",
+  "_id": "@lit/lit-starter-js@1.0.5"
 }
