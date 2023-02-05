@@ -4,19 +4,67 @@
   <head>
     <meta charset="utf-8" />
     <title>&lt;my-element> Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="../my-element.js"></script>
-    <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
-      }
-    </style>
+    <script type="module" src="../components/avatar/avatar.js"></script>
+    <script
+      type="module"
+      src="../components/avatarGroup/avatarGroup.js"
+    ></script>
+    <script type="module" src="../components/banner/banner.js"></script>
   </head>
-  <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+  <body class="relative container mx-auto mb-8 pt-24">
+    <!-- <figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
+      <img
+        class="w-24 h-24 rounded-full mx-auto"
+        src="/sarah-dayan.jpg"
+        alt=""
+        width="384"
+        height="512"
+      />
+      <div class="pt-6 space-y-4">
+        <blockquote>
+          <p class="text-lg font-medium">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It's easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+        </blockquote>
+        <figcaption class="font-medium">
+          <div class="text-sky-500 dark:text-sky-400">Sarah Dayan</div>
+          <div class="text-slate-700 dark:text-slate-500">
+            Staff Engineer, Algolia
+          </div>
+        </figcaption>
+      </div>
+    </figure> -->
+
+    <ds-banner text="Announcement Message" type="announcement"></ds-banner>
+    <ds-avatar
+      backgroundcolor="#ffffff"
+      appearance="circle"
+      size="large"
+    ></ds-avatar>
+    <ds-avatar-group appearance="circle" size="large"></ds-avatar-group>
+
+    <script>
+      let element = document.querySelector('ds-avatar-group');
+      element.avatars = [
+        {
+          profilePicture:
+            'https://randomuser.me/api/portraits/thumb/women/76.jpg',
+        },
+        {
+          profilePicture:
+            'https://randomuser.me/api/portraits/thumb/women/77.jpg',
+        },
+        {
+          profilePicture:
+            'https://randomuser.me/api/portraits/thumb/women/78.jpg',
+        },
+      ];
+    </script>
   </body>
 </html>
