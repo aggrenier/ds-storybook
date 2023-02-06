@@ -1,7 +1,7 @@
 import {html} from 'lit-html';
 
 // eslint-disable-next-line no-unused-vars
-import {AvatarGroup} from './banner';
+import {Banner} from '../../../components/banner/banner';
 export default {
   title: 'Design System/Banner',
   argTypes: {

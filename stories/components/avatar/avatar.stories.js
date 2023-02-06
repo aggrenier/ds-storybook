@@ -1,7 +1,7 @@
 import {html} from 'lit-html';
 
 // eslint-disable-next-line no-unused-vars
-import {Avatar} from './avatar';
+import {Avatar} from '../../../components/avatar/avatar';
 export default {
   title: 'Design System/Avatar',
   argTypes: {

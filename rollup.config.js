@@ -8,9 +8,10 @@ import summary from 'rollup-plugin-summary';
 import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import multi from '@rollup/plugin-multi-entry';
 
 export default {
-  input: 'my-element.js',
+  input: './components/*/*.js',
   output: {
     file: 'my-element.bundled.js',
     format: 'esm',
@@ -21,6 +22,7 @@ export default {
     }
   },
   plugins: [
+    multi(),
     replace({'Reflect.decorate': 'undefined'}),
     resolve(),
     terser({

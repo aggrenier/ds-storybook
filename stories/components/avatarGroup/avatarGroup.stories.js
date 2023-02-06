@@ -1,7 +1,7 @@
 import {html} from 'lit-html';
 
 // eslint-disable-next-line no-unused-vars
-import {AvatarGroup} from './avatarGroup';
+import {AvatarGroup} from '../../../components/avatarGroup/avatarGroup';
 export default {
   title: 'Design System/Avatar Group',
   argTypes: {

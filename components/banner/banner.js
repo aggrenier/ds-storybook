@@ -1,33 +1,41 @@
 import {html, css, LitElement, nothing} from 'lit';
 
+import {sharedStyles} from '../styles';
+
 export class Banner extends LitElement {
-  static styles = css`
-    .banner {
-      padding: 12px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-radius: 5px;
-      min-height: 24px;
-      display: flex;
-      align-items: center;
-    }
+  static styles = [
+    sharedStyles,
+    css`
+      .banner {
+        padding: 12px;
+        border-radius: 5px;
+        min-height: 24px;
+        display: flex;
+        align-items: center;
+      }
 
-    .banner-announcement {
-      background-color: rgb(66, 82, 110);
-      color: rgb(255, 255, 255);
-    }
-    .banner-warning {
-      background-color: rgb(255, 171, 0);
-      color: rgb(23, 43, 77);
-    }
-    .banner-error {
-      background-color: rgb(222, 53, 11);
-      color: rgb(255, 255, 255);
-    }
+      .banner:hover {
+        box-shadow: inset rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
 
-    svg {
-      padding-right: 12px;
-    }
-  `;
+      .banner-announcement {
+        background-color: rgb(66, 82, 110);
+        color: rgb(255, 255, 255);
+      }
+      .banner-warning {
+        background-color: rgb(255, 171, 0);
+        color: rgb(23, 43, 77);
+      }
+      .banner-error {
+        background-color: rgb(222, 53, 11);
+        color: rgb(255, 255, 255);
+      }
+
+      svg {
+        padding-right: 12px;
+      }
+    `,
+  ];
 
   static properties = {
     type: {type: String},
@@ -81,7 +89,7 @@ export class Banner extends LitElement {
   }
 
   render() {
-    return html`<div class="banner banner-${this.type}">
+    return html`<div class="banner banner-${this.type} box-shadow">
       ${this.getIcon()} <span>${this.text}</span>
     </div>`;
   }
